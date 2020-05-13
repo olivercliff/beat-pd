@@ -21,12 +21,9 @@ end
 
 datfile = sprintf([dataset ,'%s%s.mat'], ts_str, n_str);
 
-hctsa_dir = '/home/oliver/Workspace/code/toolkits/hctsa/';
-if ~isdir('Calculation')
-  cwd = pwd;
-  cd(hctsa_dir);
-  startup
-  cd(cwd);
+if ~exist('TS_compute','file')
+  fprintf('Run startup.m from HCTSA directory.\n');
+  return;
 end
 
 cis_database = ['./data/' dataset '/'];

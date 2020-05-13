@@ -35,17 +35,14 @@ N = 10000; % Should probably grab this from a sample TS but oh well..
 
 %% Setup
 
-hctsa_dir = '/home/oliver/Workspace/code/toolkits/hctsa/';
 if ~exist('TS_compute','file')
-  cwd = pwd;
-  cd(hctsa_dir);
-  startup
-  cd(cwd);
+  fprintf('Run startup.m from HCTSA directory.\n');
+  return;
 end
 
 prefix = [dataset modality '-' subchallenge '_'];
-classifier_file = ['./cluster/' dataset '/' prefix 'classifier.mat'];
-predictions_file = ['./cluster/' dataset '/' prefix 'predictions.mat'];
+classifier_file = ['./classifiers/' prefix 'classifier.mat'];
+predictions_file = ['./data/hctsa/' dataset '/' prefix 'predictions.mat'];
 
 test_database = ['./data/' dataset '/'];
 

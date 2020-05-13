@@ -27,12 +27,9 @@ real_database = ['./data/' dataset '/'];
 datfile = sprintf([real_database dataset '-' datatype '%s%s.mat'], ts_str, n_str);
 HCTSA_file = sprintf([real_database dataset '-' datatype '%s%s-HCTSA.mat'], ts_str, n_str);
 
-hctsa_dir = '/home/oliver/Workspace/code/toolkits/hctsa/';
-if ~isdir('Calculation')
-  cwd = pwd;
-  cd(hctsa_dir);
-  startup
-  cd(cwd);
+if ~exist('TS_compute','file')
+  fprintf('Run startup.m from HCTSA directory.\n');
+  return;
 end
 
 %% Collate time series data

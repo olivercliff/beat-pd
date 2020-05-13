@@ -3,6 +3,27 @@
 Oliver M. Cliff and Ben D. Fulcher
 School of Physics, University of Sydney
 
+##Before starting
+
+**Get the toolkits and data**
+
+1. Clone my forks of the [HCTSA](https://github.com/olivercliff/hctsa) and [Catch22](https://github.com/olivercliff/catch22).
+2. Download the data, see [Accessing the Data](https://www.synapse.org/#!Synapse:syn20825169/wiki/600903).
+3. Organise the data: place testing files in *data/CIS-PD/testing_data* and *data/REAL-PD/testing_data*
+
+If only making predictions, you can stop here and just call *predictAllPhenotypes.m* to and *makeSubmissionCSVs.m*. If you want to (re-)learn the features, see below.
+
+**Running HCTSA**
+
+*Before running any code, make sure all paths are set correctly.*
+
+1. Run *preprocessCIS.m* and *preprocessREAL.m* for iterating through all CSV files and extracting them into MAT-files (make sure you check options).
+2. Run *initCIS.m* and *initREAL.m* to initialise HCTSA files (make sure you check options).
+3. If using a cluster, there is some useful code in the *cluster* subfolder
+4. Else, you can use *runHCTSALocal.m* to with either the Catch22 code or the full HCTSA (see options)
+5. Run *trainClassifier.m* (or *trainAllClassifiers.m*) to get the classifiers for each dataset and sensor.
+6. See above for making predictions.
+
 ##Summary Sentence
 
 Our method was to use [HCTSA](https://hctsa-users.gitbook.io/hctsa-manual/), the highly-comparative time-series analysis toolkit, to detect discriminative features and build classifiers for each dataset (REAL-PD/CIS-PD) and modality (accelerometer/gyro).
