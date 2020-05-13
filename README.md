@@ -1,4 +1,4 @@
-#Sydney Neurophysics BEAT-PD DREAM Challenge Entry
+##Sydney Neurophysics BEAT-PD DREAM Challenge Entry
 
 Oliver M. Cliff and Ben D. Fulcher
 School of Physics, University of Sydney
