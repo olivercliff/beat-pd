@@ -31,11 +31,12 @@ assert(any(contains(modalities,modality)));
 
 %% Setup
 
-subdir = ['./cluster/' dataset '/'];
-input_prefix = [subdir dataset modality '_'];
-prefix = [subdir dataset modality '-' subchallenge '_'];
+classifier_prefix = ['./classifiers/' dataset modality '-' subchallenge '_'];
+data_subdir = ['./data/hctsa/' dataset '/'];
+input_prefix = [data_subdir dataset modality '_'];
+prefix = [data_subdir dataset modality '-' subchallenge '_'];
 
-classifier_filename = [prefix 'classifier.mat'];
+classifier_filename = [classifier_prefix 'classifier.mat'];
 
 if exist(classifier_filename,'file')
     fprintf('File %s already exists',classifier_filename);
@@ -50,16 +51,18 @@ if exist(classifier_filename,'file')
     end
 end
 
-copyfile([input_prefix 'HCTSA.mat'], [prefix 'HCTSA.mat']);
+success = copyfile([input_prefix 'HCTSA.mat'], [prefix 'HCTSA.mat']);
+
+if ~success
+    error('Copying %s to %s failed. Check directory structure.\n',...
+            [input_prefix 'HCTSA.mat'], [prefix 'HCTSA.mat']);
+end
 
 use_na = false;
 
-hctsa_dir = '/home/oliver/Workspace/code/toolkits/hctsa/';
 if ~exist('TS_compute','file')
-  cwd = pwd;
-  cd(hctsa_dir);
-  startup
-  cd(cwd);
+  fprintf('Run startup.m from HCTSA directory.\n');
+  return;
 end
 
 % Label all time series by whatever the option set is
