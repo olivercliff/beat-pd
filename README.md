@@ -98,4 +98,3 @@ We assume this method needs some more preprocessing of the time series in order 
 
 ##Authors Statement
 OC wrote the code and Wiki; BF advised.
->>>>>>> 205cac7... Removed joint classifier (too large)
