@@ -1,9 +1,9 @@
-##Sydney Neurophysics BEAT-PD DREAM Challenge Entry
+# Sydney Neurophysics BEAT-PD DREAM Challenge Entry
 
 Oliver M. Cliff and Ben D. Fulcher
 School of Physics, University of Sydney
 
-##Before starting
+# Before starting
 
 **Get the toolkits and data**
 
@@ -24,11 +24,11 @@ If only making predictions, you can stop here and just call *predictAllPhenotype
 5. Run *trainClassifier.m* (or *trainAllClassifiers.m*) to get the classifiers for each dataset and sensor.
 6. See above for making predictions.
 
-##Summary Sentence
+# Summary Sentence
 
 Our method was to use [HCTSA](https://hctsa-users.gitbook.io/hctsa-manual/), the highly-comparative time-series analysis toolkit, to detect discriminative features and build classifiers for each dataset (REAL-PD/CIS-PD) and modality (accelerometer/gyro).
 
-##Background/Introduction
+# Background/Introduction
 
 HCTSA is a software package for running highly comparative time-series analysis using Matlab. The software provides a code framework that enables the extraction of thousands of time-series features from a time series (or a time-series dataset). It also provides a range of tools for visualizing and analyzing the resulting time-series feature matrix, including:
 
@@ -39,7 +39,7 @@ HCTSA is a software package for running highly comparative time-series analysis 
 
 By first reducing the dimensionality of the time-series data to univariate measurements, we were able to use the suite of normalization tools and classifiers in this toolkit to detect important features. The best performing classifier was then used for prediction of the testing data.
 
-##Methods
+# Methods
 
 Our high-level approach is as follows (more detail below):
 1. Reduce the 3-dimensional time-series dataset to a single time series through PCA,
@@ -89,12 +89,12 @@ Interestingly, each classifier for the CIS-PD dataset chose only classes 0 and 4
 
 We assume this method needs some more preprocessing of the time series in order to obtain meaningfully predictive classifiers.
 
-##References
+# References
 
 * BEAT-PD DREAM Challenge (syn20825169)
 * B.D. Fulcher and N.S. Jones. hctsa: A computational framework for automated time-series phenotyping using massive feature extraction. Cell Systems 5, 527 (2017).
 * B.D. Fulcher, M.A. Little, N.S. Jones. Highly comparative time-series analysis: the empirical structure of time series and their methods. J. Roy. Soc. Interface 10, 83 (2013).
 * C.H. Lubba, S.S. Sethi, P. Knaute, S.R. Schultz, B.D. Fulcher, N.S. Jones. catch22: CAnonical Time-series CHaracteristics. Data Mining and Knowledge Discovery (2019).
 
-##Authors Statement
+# Authors Statement
 OC wrote the code and Wiki; BF advised.
